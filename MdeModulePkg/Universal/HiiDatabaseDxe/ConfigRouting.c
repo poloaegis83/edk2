@@ -3030,11 +3030,6 @@ ParseIfrData (
               goto Done;
             }
 
-            if (IfrEfiVarStoreTmp == NULL) {
-              Status = EFI_OUT_OF_RESOURCES;
-              goto Done;
-            }
-
             FindQuestionDefaultSetting (DefaultData.DefaultId, IfrEfiVarStoreTmp, &(IfrString->Question), (VOID *)StringData, VarWidth, QuestionReferBitField);
             if ((DefaultData.Value.string != 0) && (StringData != NULL)) {
               DefaultData.Value.string = InternalHiiSetString (HiiHandle, 0, StringData, NULL);
